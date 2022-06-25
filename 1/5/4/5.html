@@ -1,0 +1,51 @@
+<script>
+    let arr = [1, -2, 3, 4, -9, 6];
+
+    function getMaxSubSum(arr){
+        let maxSum=0;
+
+        while(arr.length>0 && arr.at(-1)<=0){
+            arr.pop();
+        }
+        let subSumPositiveLast=0;
+        let subSumPositive=0;
+        let subSumNegative=0;
+        while(arr.length>0){
+            while(arr.length>0 && arr.at(-1)>=0){
+                subSumPositive+=arr.pop();
+            }
+            
+            if(subSumPositive>maxSum){
+                maxSum=subSumPositive;
+            }
+            if(subSumPositive+subSumPositiveLast+subSumNegative>0){
+                subSumPositiveLast=subSumPositive+subSumPositiveLast
+                +subSumNegative;
+            }
+            else{
+                subSumPositiveLast=subSumPositive;
+            }
+            subSumPositive=0;
+            subSumNegative=0;
+            if(subSumPositiveLast>maxSum){
+                maxSum=subSumPositiveLast;
+            }
+            while(arr.length>0 && arr.at(-1)<0){
+                subSumNegative+=arr.pop();
+            }
+        }
+
+
+
+        return maxSum;
+    }
+
+
+    alert(getMaxSubSum(arr));
+    alert(getMaxSubSum([-1, 2, 3, -9]) == 5); //(сумма выделенных элементов)
+    alert(getMaxSubSum([2, -1, 2, 3, -9]) == 6);
+    alert(getMaxSubSum([-1, 2, 3, -9, 11]) == 11);
+    alert(getMaxSubSum([-2, -1, 1, 2]) == 3);
+    alert(getMaxSubSum([100, -9, 2, -3, 5]) == 100);
+    alert(getMaxSubSum([1, 2, 3]) == 6);// (берём все)
+</script>
