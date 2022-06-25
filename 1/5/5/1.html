@@ -1,0 +1,14 @@
+<script>
+    alert(camelize("background-color") == 'backgroundColor');
+    alert(camelize("list-style-image") == 'listStyleImage');
+    alert(camelize("-webkit-transition") == 'WebkitTransition');
+
+    function camelize(str){
+        let split=str.split('-');
+        let result=split[0];
+        for(let i=1;i<split.length;i++){
+            result+=split[i][0].toUpperCase()+split[i].slice(1);
+        }
+        return result;
+    }
+</script>
