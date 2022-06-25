@@ -1,0 +1,12 @@
+<script>
+    function readNumber(){
+        let num=prompt("Enter num","");
+        while(num && isFinite(num)){
+            alert(num);
+            num = prompt("Enter num","");
+        }
+        return null;
+    }
+
+    readNumber();
+</script>
