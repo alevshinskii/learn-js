@@ -1,0 +1,17 @@
+<script>
+    function sumInput(){
+        let array=[];
+        let num=+prompt("Enter num","");
+        while(num && isFinite(num)){
+            array.push(num);
+            num=+prompt("Enter num","");
+        }
+        let sum=0;
+        for(let i of array){
+            sum+= i;
+        }
+        alert(sum);
+    }
+
+    sumInput();
+</script>
