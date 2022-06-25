@@ -1,0 +1,45 @@
+<script>
+    let calc = new Calculator;
+
+    alert( calc.calculate("3 + 7") ); // 10
+
+    function Calculator(){
+        this.calculate=(str) => {
+            let split = str.split(' ');
+            let a=split[0];
+            let op=split[1];
+            let b=split[2];
+
+            let method=this.methods.find(m=>m.operator==op);
+            return method?.action(a,b);
+        };
+        this.methods=[
+            {
+                operator:"+",
+                action:(a,b) => +a + +b
+            },
+            {
+                operator:"-",
+                action:(a,b) => a-b
+            }
+        ];
+        this.addMethod=(operator,action) => {
+            let method={operator,action};
+            if(this.methods.findIndex(x=>x.operator==operator)==-1){
+                this.methods.push(method);
+            }
+        }
+    }
+
+
+    let powerCalc = new Calculator;
+    powerCalc.addMethod("*", (a, b) => a * b);
+    powerCalc.addMethod("/", (a, b) => a / b);
+    powerCalc.addMethod("**", (a, b) => a ** b);
+
+    let result = powerCalc.calculate("2 ** 3");
+    alert( result ); // 8
+
+
+
+</script>
