@@ -1,0 +1,29 @@
+<script>
+    let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu"
+    };
+
+    multiplyNumeric(menu);
+
+    for(let prop in menu){
+        alert(menu[prop]);
+    }
+
+    // после вызова функции
+    // menu = {
+    //     width: 400,
+    //     height: 600,
+    //     title: "My menu"
+    // };
+
+    function multiplyNumeric(obj){
+        for(let prop in obj){
+            if(typeof obj[prop] == "number"){
+                obj[prop]*=2;
+            }
+        }
+    }
+
+</script>
