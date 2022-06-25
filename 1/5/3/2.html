@@ -1,0 +1,16 @@
+<script>
+
+    function checkSpam(str){
+        let normalizedString=str.toLowerCase();
+        if(normalizedString.includes("xxx")||
+        normalizedString.includes("viagra")){
+            return true;
+        }
+        return false;
+    }
+
+
+    alert(checkSpam('buy ViAgRA now') == true && 
+    checkSpam('free xxxxx') == true &&
+    checkSpam("innocent rabbit") == false);
+</script>
