@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    alert( formatDate(new Date(new Date - 1)) ); // "прямо сейчас"
+
+    alert( formatDate(new Date(new Date - 30 * 1000)) ); // "30 сек. назад"
+
+    alert( formatDate(new Date(new Date - 5 * 60 * 1000)) ); // "5 мин. назад"
+
+    alert( formatDate(new Date(new Date - 86400 * 1000)) );
+
+    function formatDate(date){
+        let now=new Date();
+        let diff=now.getTime()-date.getTime();
+        if(diff<2*1000){
+            return "прямо сейчас";
+        }
+        else if(diff<60*1000){
+            return `${diff/1000} сек. назад`;
+        }
+        else if(diff<60*60*1000){
+            return `${diff/1000/60} мин. назад`;
+        }
+        else{
+            return `${date.getDate()}-${date.getMonth()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+        }
+    }
+</script>
