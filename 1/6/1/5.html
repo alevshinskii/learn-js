@@ -7,20 +7,24 @@
                 value: 3,
                 next: {
                     value: 4,
-                    next: null
+                    next: {
+                        value: 5,
+                        next: null
+                }
                 }
             }
         }
     };
 
-function printReverseList(list) {
+    function printReverseList(list) {
 
-  if (list.next) {
-    printReverseList(list.next);
-  }
+    if (list.next) {
+        printReverseList(list.next);
+    }
 
-  alert(list.value);
-}
+    alert(list.value);
 
-printReverseList(list);
+    }
+
+    printReverseList(list);
 </script>
