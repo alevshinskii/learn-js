@@ -1,0 +1,11 @@
+<script>
+    let messages = [
+        { text: "Hello", from: "John" },
+        { text: "How goes?", from: "John" },
+        { text: "See you soon", from: "Alice" }
+    ];
+
+    let seenMessages=new WeakMap();
+    messages.forEach((m)=>
+    seenMessages.set(m,new Date()));
+</script>
