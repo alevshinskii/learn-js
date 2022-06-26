@@ -1,0 +1,27 @@
+<script>
+    
+    alert(fib(3)); // 2
+    alert(fib(7)); // 13
+    alert(fib(77)); // 5527939700884757
+
+    function fib(n){
+        let first=1;
+        let second=1;
+        let third=first+second;
+        if(n>2){
+            return fibIteration(first,second,third,3,n);
+        } 
+        else {
+            return 1;
+        }
+    }
+    function fibIteration(first,second,third,current,n){
+        if(current>=n){
+            return third;
+        }
+        else{
+            current+=1;
+            return fibIteration(second,third,second+third,current,n);
+        }
+    }
+</script>
