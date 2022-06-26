@@ -1,0 +1,16 @@
+<script>
+    let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+    alert( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
+
+    function aclean(arr) {
+        let words=new Map();
+        arr.forEach(w => {
+            let normalized=w.toLowerCase();
+            let sorted=Array.from(normalized).sort().reduce((word,i)=> 
+            word+i);
+            words.set(sorted,w);
+        });
+        return Array.from(words.values());
+    }
+</script>
