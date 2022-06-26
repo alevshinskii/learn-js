@@ -1,0 +1,13 @@
+<script>
+    let messages = [
+        {text: "Hello", from: "John"},
+        {text: "How goes?", from: "John"},
+        {text: "See you soon", from: "Alice"}
+    ];
+
+    let seenMessages=new WeakSet();
+    messages.forEach((message)=>
+    seenMessages.add(message));
+    
+    messages=null;
+</script>
