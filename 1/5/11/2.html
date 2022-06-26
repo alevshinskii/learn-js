@@ -1,0 +1,11 @@
+<script>
+    let date = new Date(2012, 0, 3);  // 3 января 2012 года
+    alert( getWeekDay(date) ); 
+
+    function getWeekDay(date){
+        let i=date.getDay();
+        let dayStrings=["вс","пн","вт","ср","чт","пт","сб"];
+        
+        return dayStrings[i];
+    }
+</script>
