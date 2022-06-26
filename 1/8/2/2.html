@@ -1,0 +1,11 @@
+<script>
+
+    function Obj(name) {
+        this.name = name;
+    }
+
+    let obj = new User('John');
+    let obj2 = new obj.constructor('Pete');
+
+    alert( obj.name ); // Pete 
+</script>
